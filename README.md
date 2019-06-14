@@ -30,13 +30,29 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+`.forEAch` doesn't return anything, it just runs the given function `.length` times, meaning that if it's going to do anything useful, it is going to be impure. `.map` on the other hand returns the result of each element being passed through the given function, so it can be pure.
+
 2. What is the difference between a function and a method?
+
+A method is a function belonging to a class. You *can* create intance methods as well as static/class methods, but it's generally not a good idea.
 
 3. What is closure?
 
+Closure is the ability for functions to remember their context if they need to. Values in the closure are hidden to everything else.
+
 4. Describe the four rules of the 'this' keyword.
 
+`this` points at the calling context, which is `window` when in the global context, outside of any local function scope.
+
+Using a period operator to call a function that belongs to an object will make `this` point to that object, the thing before the period.
+
+`new` creates a new object/instance and runs a constructor function in the context of that object. That means that `this` will refer to the new instance when using a constructor function.
+
+Certain functions (like `call`) can explicitly point `this` at whatever you want, overriding what it would normally do.
+
 5. Why do we need super() in an extended class?
+
+Mostly because JS rules require it. One could in theory use `ParentConstructor.call(this, attrs)` to inherit values from parent classes, but the syntax rules require `super(attrs)` (which does the same thing) and doing that is easier on the eyes. Also it's pretty much always a good idea to initialize parent classes` logic first before child class logic, so it makes sense that JS rules would enforce that.
 
 ## Project Set up
 
