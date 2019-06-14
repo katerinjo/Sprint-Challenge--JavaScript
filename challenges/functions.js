@@ -39,7 +39,7 @@ console.log(consume("Mary","Poppins", greeting)); // Hello Mary Poppins, nice to
 
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
-// Explanation: 
+// Explanation: Javascript knows when to remember the context of a function. `nestedFunction` remembers the environment in `myFunction` indefinitely, even when the values change.
 
 
 const external = "I'm outside the function";
